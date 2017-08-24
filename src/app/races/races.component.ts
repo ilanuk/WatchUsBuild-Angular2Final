@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Race } from './race';
 import { RaceService } from './race.service';
+import { RaceComponent } from '../race/race.component';
 
 @Component({
   selector: 'my-races',
@@ -29,14 +30,10 @@ export class RacesComponent {
     return sum;
   }
 
-  castDate(date) {
-    return new Date(date);
-  }
 
   cashLeft() {
     return this.cash - this.totalCost();
   }
-
   enterRace(race) {
     if (this.cashLeft() > race.entryFee) {
       race.isRacing = true;
